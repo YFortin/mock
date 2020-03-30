@@ -21,7 +21,7 @@ npm run lint
 ```
 
 ### Deploy
-First, merge changes into gh-pages branch. Then
+First, merge changes into `gh-pages` branch. Then
 ```
 npm run build
 git add dist && git commit -m "Commit message"
