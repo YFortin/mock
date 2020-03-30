@@ -36,7 +36,7 @@ import axios from 'axios'
     methods: {
       translate: function () {
             axios
-      .get('http://mock-this.herokuapp.com/?fbclid=IwAR0j08DQuCzqE3tbEvh149MEzyad3w2XsIOCIU5xXhtiNRSOdxXtxFMlZdw', {body: this.input})
+      .get('https://mock-this.herokuapp.com/?fbclid=IwAR0j08DQuCzqE3tbEvh149MEzyad3w2XsIOCIU5xXhtiNRSOdxXtxFMlZdw', {body: this.input})
       .then(response => (this.output = response.mock))
       }
     }
