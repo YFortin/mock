@@ -38,7 +38,7 @@ import axios from 'axios'
         let options = {
           headers: {
             "Content-Type": 'application/json',
-            "Access-Control-Allow-Origin": "http:localhost:8080"
+            "Access-Control-Allow-Origin": "*"
           }
         }
             axios
