@@ -35,8 +35,14 @@ import axios from 'axios'
     }),
     methods: {
       translate: function () {
+        let options = {
+          headers: {
+            "Content-Type": 'application/json',
+            "Access-Control-Allow-Origin": "http:localhost:8080"
+          }
+        }
             axios
-      .get('https://mock-this.herokuapp.com/?fbclid=IwAR0j08DQuCzqE3tbEvh149MEzyad3w2XsIOCIU5xXhtiNRSOdxXtxFMlZdw', {body: this.input})
+      .get('https://mock-this.herokuapp.com/?fbclid=IwAR0j08DQuCzqE3tbEvh149MEzyad3w2XsIOCIU5xXhtiNRSOdxXtxFMlZdw', {'message': this.input}, options)
       .then(response => (this.output = response.mock))
       }
     }
