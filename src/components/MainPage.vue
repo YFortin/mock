@@ -39,10 +39,13 @@ import axios from 'axios'
           headers: {
             "Content-Type": 'application/json',
             "Access-Control-Allow-Origin": "*"
+          },
+          data: {
+            'message': this.input
           }
         }
             axios
-      .get('https://mock-this.herokuapp.com/?fbclid=IwAR0j08DQuCzqE3tbEvh149MEzyad3w2XsIOCIU5xXhtiNRSOdxXtxFMlZdw', {'message': this.input}, options)
+      .get('https://mock-this.herokuapp.com', {'message': this.input}, options)
       .then(response => (this.output = response.mock))
       }
     }
