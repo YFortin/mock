@@ -15,7 +15,7 @@
         <v-textarea solo v-model="input" placeholder="Hey hi! This is not serious" v-on:change="translate"></v-textarea>      
       </v-col>
       <v-col>
-        <v-textarea disabled solo-inverted placeholder="Hey HI! tHis is not SeRiOUS"/>
+        <v-textarea disabled v-model="output" solo-inverted placeholder="Hey HI! tHis is not SeRiOUS"/>
       </v-col>
     </v-row>
     <v-row justify="center">
@@ -35,18 +35,18 @@ import axios from 'axios'
     }),
     methods: {
       translate: function () {
-        let options = {
+
+        axios({
+          method: 'post',
+          url: 'https://mock-this.herokuapp.com',
+          data: {
+            'message': this.input
+          },
           headers: {
             "Content-Type": 'application/json',
             "Access-Control-Allow-Origin": "*"
           },
-          data: {
-            'message': this.input
-          }
-        }
-            axios
-      .get('https://mock-this.herokuapp.com', {'message': this.input}, options)
-      .then(response => (this.output = response.mock))
+        }).then(response => (this.output = response.mock))
       }
     }
   }
